@@ -1,26 +1,144 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8z6-uT-2Rk">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--计算个人所得税-->
+        <scene sceneID="YmJ-is-mXf">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="AWd-an-ztQ" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="Oah-zV-7mP"/>
+                        <viewControllerLayoutGuide type="bottom" id="UPt-jE-B5h"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="oN3-b9-le8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Qtu-pg-BsL">
+                                <rect key="frame" x="54" y="112" width="300" height="121"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="05S-ca-eP5">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="60.5"/>
+                                        <subviews>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="月收入总额：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3f-i3-r1m">
+                                                <rect key="frame" x="0.0" y="0.0" width="104" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vx5-Oh-nmZ">
+                                                <rect key="frame" x="0.0" y="30.5" width="300" height="30"/>
+                                                <accessibility key="accessibilityConfiguration" label="TextField Revenue"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="cuX-Qe-v6m"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="next"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="cuX-Qe-v6m"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="cuX-Qe-v6m"/>
+                                                    </mask>
+                                                </variation>
+                                            </textField>
+                                        </subviews>
+                                        <variation key="widthClass=compact" alignment="top" axis="vertical"/>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHv-Dw-hHp">
+                                        <rect key="frame" x="0.0" y="90.5" width="300" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" label="Calculate Button">
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
+                                        <state key="normal" title="计算">
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onClick:" destination="AWd-an-ztQ" eventType="touchUpInside" id="Rcc-wG-FuL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="widthClass=compact" alignment="fill" axis="vertical"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="OrM-GF-dty">
+                                <rect key="frame" x="14" y="289" width="263" height="21"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="月应纳个人所得税税额:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czV-Fo-WBE">
+                                        <rect key="frame" x="0.0" y="0.0" width="178" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iK5-6J-hbQ">
+                                        <rect key="frame" x="228" y="0.0" width="34.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Qtu-pg-BsL" firstAttribute="centerX" secondItem="oN3-b9-le8" secondAttribute="centerX" id="SuK-NK-uIg"/>
+                            <constraint firstItem="OrM-GF-dty" firstAttribute="top" secondItem="Qtu-pg-BsL" secondAttribute="bottom" constant="69" id="lG2-2S-xrD"/>
+                            <constraint firstItem="Qtu-pg-BsL" firstAttribute="top" secondItem="Oah-zV-7mP" secondAttribute="bottom" constant="64" id="q4g-YA-DOi"/>
+                            <constraint firstItem="OrM-GF-dty" firstAttribute="centerX" secondItem="Qtu-pg-BsL" secondAttribute="centerX" id="zwh-TD-Pf6"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="SuK-NK-uIg"/>
+                                <exclude reference="q4g-YA-DOi"/>
+                                <exclude reference="lG2-2S-xrD"/>
+                                <exclude reference="zwh-TD-Pf6"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="SuK-NK-uIg"/>
+                                <include reference="q4g-YA-DOi"/>
+                                <include reference="lG2-2S-xrD"/>
+                                <include reference="zwh-TD-Pf6"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="计算个人所得税" id="WYe-D6-ouE"/>
+                    <connections>
+                        <outlet property="lblTax" destination="iK5-6J-hbQ" id="Zk5-CQ-E4D"/>
+                        <outlet property="txtRevenue" destination="vx5-Oh-nmZ" id="eac-d9-b2X"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="813-TE-AYO" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1365" y="276"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7AF-8R-mep">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8z6-uT-2Rk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pCl-1t-eoX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AWd-an-ztQ" kind="relationship" relationship="rootViewController" id="KYx-hK-Lmp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hq6-d0-Uvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="567" y="276"/>
         </scene>
     </scenes>
 </document>
